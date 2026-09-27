@@ -16,7 +16,6 @@ import org.apache.commons.lang3.tuple.MutablePair;
 
 import com.simibubi.create.AllBlocks;
 import com.simibubi.create.AllPackets;
-import com.simibubi.create.Create;
 import com.simibubi.create.api.behaviour.interaction.MovingInteractionBehaviour;
 import com.simibubi.create.api.behaviour.movement.MovementBehaviour;
 import com.simibubi.create.content.contraptions.AbstractContraptionEntity.ContraptionRotationState;
@@ -158,8 +157,6 @@ public class ContraptionCollider {
 			obb.setRotation(rotationMatrix);
 
 			// Use simplified bbs when present
-			Create.LOGGER.info("simplified={} entity={}",
-				contraption.getSimplifiedEntityColliders().isPresent(), entity.getType());
 			final Vec3 motionCopy = motion;
 			List<AABB> collidableBBs = contraption.getSimplifiedEntityColliders()
 				.orElseGet(() -> {
